@@ -1,0 +1,17 @@
+body {
+    background-color: #622121;
+}
+.text-large {
+    font-size: 250%;
+}
+@media screen and (max-width:768px) { 
+        #formContainer {
+            max-width: 90%;
+        } 
+    }
+@media screen and (min-width:992px) { 
+/*This is one of the breakpoints with Bootstrap; felt the need to customize*/
+    #formContainer {
+        max-width: 75%;
+    } 
+}

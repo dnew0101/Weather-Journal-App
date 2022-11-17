@@ -1,3 +1,6 @@
+const projectData = {};
+
+
 //requiring express; creating server
 const express = require('express');
 const app = express();
