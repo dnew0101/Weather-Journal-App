@@ -4,7 +4,6 @@ let projectData = {};
 //requiring express; creating server
 const express = require('express');
 const app = express();
-
 const port = 8000; //just keeping it simple
 
 //Dependencies
@@ -21,3 +20,11 @@ app.use(express.static('website'));
 const server = app.listen(port, () => {
     console.log(`Server is listening on localhost: ${port}`);
 });
+
+//server routes
+app.post("/add", async (req, res) => {
+    const body = await req.body;
+    projectData = body;
+    console.log(projectData);
+    res.status(200).send(projectData);
+})

@@ -16,7 +16,7 @@ generator.addEventListener("click", (e) => {
     console.log(updatedURL)
     fetchData(updatedURL).then((data) => {
         filter(data).then((filteredData) => {
-            postData('/storedUserData',filteredData);
+            postData("/add", filteredData);
         });
     })
 })
@@ -37,8 +37,8 @@ const fetchData = async (url) => {
         } else {
             alert("Error " + data.cod + ". " + capitalize(data.message) + ", please try again.");
         }
-    } catch(err) {
-        console.log(err);
+    } catch(error) {
+        console.log(error);
     }
 }
 
@@ -53,8 +53,8 @@ const filter = async (data) => {
             };
         console.log(filteredData);
         return filteredData;
-    } catch(err) {
-        console.log(err);
+    } catch(error) {
+        console.log(error);
     }
 }
 
@@ -63,15 +63,16 @@ const filter = async (data) => {
 
 const postData = async (url = "", data = {}) => {
     try{
-    const response = await fetch(url, {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(filteredData)
-    })
-} catch(err) {
-    console.log(err);
-}
+        const result = await fetch(url, {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+            return result;
+    }catch(error) {
+        console.log(error);
+    }
 }
