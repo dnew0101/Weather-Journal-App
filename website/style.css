@@ -7,9 +7,6 @@ body {
 #entryHeader {
     text-decoration: underline;
 }
-#entry {
-    font-style: italic;
-}
 @media screen and (max-width:768px) { 
         #formContainer {
             max-width: 90%;
