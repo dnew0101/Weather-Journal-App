@@ -1,4 +1,4 @@
-const projectData = {};
+let projectData = {};
 
 
 //requiring express; creating server
