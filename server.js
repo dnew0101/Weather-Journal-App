@@ -16,15 +16,17 @@ app.use(cors());
 //Initialize project folder
 app.use(express.static('website'));
 
+//server routes
+app.post('/store', async (req, res) => {
+    const body = await req.body;
+    projectData = body;
+    res.status(200).send(projectData);
+})
+app.get('/all', async (req, res) => {
+    res.send(projectData);
+})
+
 //listen method with arrow function
 const server = app.listen(port, () => {
     console.log(`Server is listening on localhost: ${port}`);
 });
-
-//server routes
-app.post("/add", async (req, res) => {
-    const body = await req.body;
-    projectData = body;
-    console.log(projectData);
-    res.status(200).send(projectData);
-})

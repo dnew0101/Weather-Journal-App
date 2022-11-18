@@ -1,17 +1,43 @@
 body {
-    background-color: #622121;
+    background-color: #213462;
 }
 .text-large {
     font-size: 250%;
 }
+#entryHeader {
+    text-decoration: underline;
+}
+#entry {
+    font-style: italic;
+}
 @media screen and (max-width:768px) { 
         #formContainer {
             max-width: 90%;
-        } 
+        }
+        #outputs {
+            max-width: 75%;
+        }
     }
 @media screen and (min-width:992px) { 
 /*This is one of the breakpoints with Bootstrap; felt the need to customize*/
     #formContainer {
         max-width: 75%;
-    } 
+    }
+    #outputs {
+        max-width: 50%;
+    }
+}
+#outputs {
+    opacity: 0;
+}
+#outputs.active-class {
+    animation: fade-in 1s ease-in forwards;
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
